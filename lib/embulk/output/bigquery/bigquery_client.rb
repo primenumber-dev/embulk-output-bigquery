@@ -326,7 +326,7 @@ module Embulk
                 "job_id:[#{job_id}] elapsed_time:#{elapsed.to_f}sec status:[#{status}]"
               }
               sleep wait_interval
-              _response = with_network_retry { client.get_job(@project, job_id, location: @location) }
+              _response = with_network_retry { client.get_job(@project, job_id) }
             end
           end
 
